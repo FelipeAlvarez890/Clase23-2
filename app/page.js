@@ -2,6 +2,7 @@
 
 import { ListadoDePlatos } from "../components/listadoPlatos";
 import { useState, useEffect } from "react";
+import { crearPlato } from "@/api/api";
 
 
 export default function Home() {
@@ -60,6 +61,8 @@ export default function Home() {
       placeholder="Descripción..." 
       onChange={(e) => setDescription(e.target.value)}/>
 
+
+    <button onClick={() => crearPlato(name, category, localId, city, price, description)}>Crear Plato</button>
     </>
   );
 }
